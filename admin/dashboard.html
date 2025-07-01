@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <h2>Admin Panel</h2>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="dashboard.html" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="stocks.html"><i class="fas fa-boxes"></i> Stock Management</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="admin-container">
+    <main class="main-content">
+      <h1>Welcome, Admin</h1>
+
+      <!-- Overview Section -->
+      <section class="overview-container">
+        <div class="card sales">
+          <h2>Sales Overview</h2>
+          <p><strong>Today:</strong> <span id="sales-today">₱0</span></p>
+          <p><strong>Yesterday:</strong> <span id="sales-yesterday">₱0</span></p>
+          <p><strong>This Month:</strong> <span id="sales-month">₱0</span></p>
+          <div class="export-buttons">
+            <button id="export-sales"><i class="fas fa-file-csv"></i> Export Sales CSV</button>
+            <input type="date" id="filter-date" title="Filter sales by date" />
+          </div>
+        </div>
+
+        <div class="card expenses">
+          <h2>Expenses</h2>
+          <p>Total: <span id="expenses-total">₱0</span></p>
+          <form id="add-expense-form">
+            <input type="text" id="expense-item" placeholder="Item" required />
+            <input type="number" id="expense-amount" placeholder="Amount" required />
+            <button type="submit"><i class="fas fa-plus-circle"></i> Add</button>
+          </form>
+          <ul id="expenses-list"></ul>
+          <button id="export-expenses"><i class="fas fa-file-csv"></i> Export Expenses CSV</button>
+        </div>
+
+        <div class="card profit">
+          <h2>Profit</h2>
+          <p><strong>Sales - Expenses:</strong> <span id="profit-total">₱0</span></p>
+        </div>
+      </section>
+
+      <!-- Product & Stock Section -->
+      <section class="product-stock-container">
+        <div class="card stocks">
+          <h2>Current Stocks</h2>
+          <ul id="stock-list"></ul>
+        </div>
+
+        <div class="card products">
+          <h2>Product Catalog</h2>
+          <ul id="product-list"></ul>
+          <p style="font-size: 0.9em; color: #666; margin-top: 10px;">📝 Click on names/prices to edit. Use Save/Delete to update list (temporary only).</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

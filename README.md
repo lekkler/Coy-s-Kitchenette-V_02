@@ -1,1 +1,1 @@
-# Coy-s-Kitchenette-V_02
+# CoysKitchenette.v2
